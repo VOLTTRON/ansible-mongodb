@@ -14,7 +14,9 @@ logappend = {{ mongodb_conf_logappend | to_nice_json }}
 port = {{ mongodb_conf_port }}
 
 # Listen to local interface only. Comment out to listen on all interfaces.
+{% if mongodb_listen_all == 'no' %}
 bind_ip = {{ mongodb_conf_bind_ip }}
+{% endif %}
 
 # Enables periodic logging of CPU utilization and I/O wait
 cpu = {{ mongodb_conf_cpu | to_nice_json }}
