@@ -66,9 +66,12 @@ noprealloc = {{ mongodb_conf_noprealloc | to_nice_json }}
 # nssize = <size>
 
 # Replication Options
-
 # in replicated mongo databases, specify the replica set name here
+{% if mongodb_replicasetname %}
+replSet={{ mongodb_replicasetname }}
+{% else %}
 #replSet=setname
+{% endif %}
 # maximum size in megabytes for replication operation log
 #oplogSize=1024
 # path to a key file storing authentication info for connections

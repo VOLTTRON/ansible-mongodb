@@ -45,3 +45,6 @@ mongodb_conf_noprealloc: no
 mongodb_service_enabled: yes
 # current state: started, stopped
 mongodb_service_state: started
+
+# Replecation 
+mongodb_replicasetname: "replicatset0"
